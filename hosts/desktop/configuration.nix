@@ -19,14 +19,13 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  #services.xserver.videoDrivers = ["nvidia"];
-  #hardware.opengl.enable = true;
-  #hardware.nvidia = {
-  #  package = config.boot.kernelPackages.nvidiaPackages.stable;
-  #  modesetting.enable = true;
-  #};
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.opengl.enable = true;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+  };
 }
