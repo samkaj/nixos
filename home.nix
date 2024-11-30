@@ -4,6 +4,7 @@
 		./home/i3
 		./home/alacritty
 		./home/polybar
+		./home/helix
 	];
 
 	programs.home-manager.enable = true;
@@ -23,6 +24,7 @@
 		which 
 		tree
 		i3
+		helix
 	];
 
 	programs.git = {
