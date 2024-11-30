@@ -7,7 +7,6 @@
 let
 mod = "Mod4";
 in {
-#home.file.".config/i3/config".source = ./config;
 	xsession.windowManager.i3 = {
 		extraConfig = ''
 			default_border pixel 1
@@ -26,6 +25,7 @@ in {
 				inner = 4;
 				outer = 1;
 				top = 28;
+				smartBorders = "on";
 			};
 
 			fonts = {
@@ -44,6 +44,24 @@ in {
 					Return = "mode default";
 					l = "resize grow width 10 px or 10 ppt";
 					j = "resize shrink height 10 px or 10 ppt";
+				};
+			};
+
+			colors = {
+				focused = {
+					background = "#444444";
+					border = "#444444";
+					childBorder = "#444444";
+					indicator = "#444444";
+					text = "#444444";
+				};
+
+				unfocused = {
+					background = "#080808";
+					border = "#080808";
+					childBorder = "#080808";
+					indicator = "#080808";
+					text = "#080808";
 				};
 			};
 
