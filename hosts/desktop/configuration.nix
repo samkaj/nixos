@@ -9,6 +9,7 @@
     [
       ../../modules/system.nix
       ../../modules/i3.nix
+      ../../home/i3
       ./hardware-configuration.nix
     ];
   
