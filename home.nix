@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
 	imports = [
 		./home/i3
@@ -28,4 +28,7 @@
 		userName = "samkaj";
 		userEmail = "kajavasamuel@gmail.com";
 	};
+
+	programs.alacritty.enable = true;
+	programs.bash.enable = true;
 }
