@@ -81,7 +81,7 @@
 			gp = "git push";
 			".." = "cd ..";
 			"..." = "cd ../..";
-			rebuild = "sudo nixos-rebuild switch --impure --flake";
+			rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#desktop";
 		};
 	};
 

@@ -3,6 +3,9 @@
 	imports = [
 		./home/i3
 	];
+
+	programs.home-manager.enable = true;
+	home.stateVersion = "24.05";
 	
 	home.username = "samkaj";
 	home.homeDirectory = "/home/samkaj";
@@ -25,7 +28,4 @@
 		userName = "samkaj";
 		userEmail = "kajavasamuel@gmail.com";
 	};
-
-	programs.home-manager.enable = true;
-	home.stateVersion = "24.05";
 }

@@ -8,8 +8,7 @@ for_window [class="^.*"] border pixel
 # gaps pls
 gaps inner 4
 gaps outer 1
-#gaps top 28
-gaps top 14
+gaps top 28
 
 font pango:JetBrainsMono Nerd Font 8
 
