@@ -15,13 +15,6 @@
     ];
   
   networking.hostName  = "moomin";
-  users.users.samkaj = {
-    isNormalUser = true;
-    description = "samkaj";
-    extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.zsh;
-  };
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
