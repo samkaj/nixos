@@ -13,6 +13,7 @@
 		file
 		which 
 		tree
+		i3
 	];
 
 	programs.git = {
@@ -20,8 +21,6 @@
 		userName = "samkaj";
 		userEmail = "kajavasamuel@gmail.com";
 	};
-
-
 
 	home.stateVersion = "24.05";
 	programs.home-manager.enable = true;
