@@ -3,12 +3,6 @@
 		lib,
 		...
 }: {
-	users.users.samkaj = {
-		isNormalUser = true;
-		description = "samkaj";
-		extraGroups = ["networkmanager" "wheel"];
-		shell = pkgs.zsh;
-	};
 
 	nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -80,7 +74,7 @@
 			gp = "git push";
 			".." = "cd ..";
 			"..." = "cd ../..";
-			rebuild = "sudo nixos-rebuild switch";
+			rebuild = "sudo nixos-rebuild switch --impure --flake";
 		};
 	};
 

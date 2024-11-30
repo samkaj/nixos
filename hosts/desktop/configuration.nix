@@ -11,6 +11,7 @@
       ../../modules/i3.nix
       ../../home/i3
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
   
   networking.hostName  = "moomin";
@@ -18,6 +19,7 @@
     isNormalUser = true;
     description = "samkaj";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
   };
 
   boot.loader.systemd-boot.enable = true;
