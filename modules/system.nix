@@ -6,6 +6,13 @@
 
 	nix.settings.experimental-features = ["nix-command" "flakes"];
 
+	users.users.samkaj = {
+		isNormalUser = true;
+		description = "samkaj";
+		extraGroups = ["networkmanager" "wheel"];
+		shell = pkgs.zsh;
+	};
+
 	environment.pathsToLink = [ "/libexec" ];
 
 	nix.gc = {

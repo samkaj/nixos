@@ -1,5 +1,9 @@
-{config, pkgs, ... }:
+{ pkgs, ... }:
 {
+	imports = [
+		./home/i3
+	];
+	
 	home.username = "samkaj";
 	home.homeDirectory = "/home/samkaj";
 
