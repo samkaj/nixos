@@ -3,6 +3,7 @@
 	imports = [
 		./home/i3
 		./home/alacritty
+		./home/polybar
 	];
 
 	programs.home-manager.enable = true;

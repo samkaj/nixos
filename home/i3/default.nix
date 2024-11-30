@@ -16,10 +16,10 @@ in {
 		config = {
 			modifier = mod;
 
-			startup = [
-				# TODO: handle polybar in nix :)
-				{ command = "$HOME/.config/polybar/launch.sh"; }
-			];
+			#startup = [
+			#	# TODO: handle polybar in nix :)
+			#	{ command = "$HOME/.config/polybar/launch.sh"; }
+			#];
 
 			gaps = {
 				inner = 4;
