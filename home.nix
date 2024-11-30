@@ -2,6 +2,7 @@
 {
 	imports = [
 		./home/i3
+		./home/alacritty
 	];
 
 	programs.home-manager.enable = true;
@@ -29,6 +30,5 @@
 		userEmail = "kajavasamuel@gmail.com";
 	};
 
-	programs.alacritty.enable = true;
 	programs.bash.enable = true;
 }
