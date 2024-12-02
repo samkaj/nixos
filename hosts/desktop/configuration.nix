@@ -9,6 +9,7 @@
     [
       ../../modules/system.nix
       ../../modules/i3.nix
+      ../../modules/neovim.nix
       ./hardware-configuration.nix
     ];
   

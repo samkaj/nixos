@@ -1,3 +1,0 @@
---*-- samkaj's nixos nvim --*--
-
-
