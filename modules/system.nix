@@ -69,6 +69,7 @@
 			bash
 			psmisc
 			zsh
+			clang
 	];
 
 	programs.zsh = {
