@@ -5,6 +5,7 @@
 		./home/alacritty
 		./home/polybar
 		./home/helix
+		./home/neovim
 	];
 
 	programs.home-manager.enable = true;

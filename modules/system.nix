@@ -14,6 +14,7 @@
 	};
 
 	environment.pathsToLink = [ "/libexec" ];
+	environment.variables.EDITOR = "nvim";
 
 	nix.gc = {
 		automatic = lib.mkDefault true;
