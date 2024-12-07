@@ -92,6 +92,7 @@
     psmisc
     zsh
     clang
+    home-manager
   ];
 
   programs.zsh = {

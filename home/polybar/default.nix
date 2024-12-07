@@ -1,12 +1,13 @@
 let
   colors = {
-    bg = "#101010";
-    fg = "#ffffff";
-    fg_alt = "#444444";
-    bg_alt = "#090909";
+    bg = "#fbf1f2";
+    fg = "#8b8198";
+    fg_alt = "#ac9ebe";
+    bg_alt = "#e3dadb";
     warn = "#ffaa88";
-    error = "#d70000";
-    hint = "#7788aa";
+    error = "#d57e85";
+    hint = "#a3b367";
+    accent = "#585062";
   };
 in
 {
@@ -23,10 +24,19 @@ in
         foreground = "${colors.fg}";
         padding = 1;
         separator = "::";
-        separator-foreground = "${colors.fg_alt}";
-        modules-left = [ "xworkspaces" ];
+        separator-foreground = "${colors.accent}";
+        modules-left = [
+          "xworkspaces"
+          "window"
+        ];
+        modules-right = [
+          "kb"
+          "vol"
+        ];
         override-redirect = true;
-        font-0 = "GeistMono Nerd Font:size=14;3";
+        font-0 = "GeistMono Nerd Font:size=15;3";
+        font-1 = "GeistMono Nerd Font:size=15;4";
+        line-size = 2;
       };
 
       "module/xworkspaces" = {
@@ -34,16 +44,44 @@ in
         label-monitor = "%name%";
         format = "<label-state>";
 
-        label-active-foreground = "${colors.fg}";
+        label-active-foreground = "${colors.accent}";
         label-active-background = "${colors.bg}";
         label-active = "%name%";
         label-active-padding = 1;
+        label-active-underline = "${colors.accent}";
+        label-active-underline-size = 5;
 
         label-occupied = "%name%";
-        label-occupied-foreground = "${colors.fg_alt}";
+        label-occupied-foreground = "${colors.fg}";
         label-occupied-background = "${colors.bg}";
         label-occupied-padding = 1;
       };
+
+      "module/window" = {
+        type = "internal/xwindow";
+        format-background = "${colors.bg}";
+        format-foreground = "${colors.fg}";
+        label-maxlen = 50;
+        format-padding = 1;
+      };
+
+      "module/kb" = {
+        type = "internal/xkeyboard";
+        label-layout = "%name%";
+      };
+
+      "module/vol" = {
+        type = "internal/pulseaudio";
+        format-volume = "<ramp-volume> <label-volume>";
+        ramp-volume-0 = " ";
+        ramp-volume-1 = " ";
+        ramp-volume-2 = " ";
+
+        label-muted = " ";
+        label-muted-foreground = "${colors.error}";
+        label-volume = "%percentage%";
+      };
+
     };
   };
 }

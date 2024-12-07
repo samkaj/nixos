@@ -2,7 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay = {
@@ -19,34 +19,51 @@
       rust-overlay,
       ...
     }:
+    let
+      system = "x86_64-linux";
+    in
     {
-      nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/desktop/configuration.nix
-            home-manager.nixosModules.home-manager
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/desktop/configuration.nix
+
+          # Enable Home Manager as a NixOS module
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.samkaj = import ./home.nix;
+          }
+
+          (
+            { pkgs, ... }:
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.samkaj = import ./home.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [
+                pkgs.rust-bin.stable.latest.default
+                pkgs.rust-analyzer
+              ];
             }
+          )
+        ];
+      };
 
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [ rust-overlay.overlays.default ];
-                environment.systemPackages = [
-                  pkgs.rust-bin.stable.latest.default
-                  pkgs.rust-analyzer
-                ];
-              }
-            )
-          ];
-        };
+      # Enable home-manager as a standalone flake output
+      homeConfigurations.samkaj = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ./home.nix
+            {
+                home = {
+                    username = "samkaj";
+                    homeDirectory = "/home/samkaj";
+                    stateVersion = "24.05";
+
+                };
+            }
+        ];
       };
     };
 }
