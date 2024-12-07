@@ -1,4 +1,4 @@
-{pkgs, lib, ...}:
+{ pkgs, lib, ... }:
 {
   # Install formatter binaries
   environment.systemPackages = with pkgs; [
@@ -6,6 +6,7 @@
     python3Packages.black
     clang-tools # For clang-format
     nil # Nix language server
+    nixfmt-rfc-style # Nix formatter
     prettierd
   ];
 }

@@ -5,19 +5,18 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ../../modules/system.nix
-      ../../modules/i3.nix
-      ../../modules/neovim.nix
-      ./hardware-configuration.nix
-    ];
-  
-  networking.hostName  = "moomin";
+  imports = [
+    ../../modules/system.nix
+    ../../modules/i3.nix
+    ../../modules/neovim.nix
+    ./hardware-configuration.nix
+  ];
+
+  networking.hostName = "moomin";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;

@@ -1,7 +1,8 @@
-{pkgs, lib, ...}:
-let 
-mod = "Mod4";
-in {
+{ pkgs, lib, ... }:
+let
+  mod = "Mod4";
+in
+{
   services.displayManager.defaultSession = "none+i3";
   services.xserver = {
     displayManager.lightdm.enable = true;
@@ -10,15 +11,14 @@ in {
       enable = true;
       extraPackages = with pkgs; [
         rofi
-	feh
-	picom
-	dmenu
-	polybar
+        feh
+        picom
+        dmenu
+        polybar
       ];
     };
 
     xkb.layout = "us,se";
-    xkb.variant = "";
-    xkb.options = "grp:ctrl+space_toggle";
+    xkb.options = "grp:ctrl_space_toggle";
   };
 }

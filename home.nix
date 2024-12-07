@@ -1,56 +1,56 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-	imports = [
-		./home/i3
-		./home/alacritty
-		./home/polybar
-		./home/helix
-		./home/neovim
-	];
+  imports = [
+    ./home/i3
+    ./home/alacritty
+    ./home/polybar
+    ./home/helix
+    ./home/neovim
+  ];
 
-	programs.home-manager.enable = true;
-	home.stateVersion = "24.05";
-	
-	home.username = "samkaj";
-	home.homeDirectory = "/home/samkaj";
+  programs.home-manager.enable = true;
+  home.stateVersion = "24.05";
 
-	home.packages = with pkgs; [
-		neofetch
-		zip
-		xz
-		unzip
-		ripgrep
-		jq
-		file
-		which 
-		tree
-		i3
-		helix
-	];
+  home.username = "samkaj";
+  home.homeDirectory = "/home/samkaj";
 
-	programs.zsh = {
-		enable = true;
-		shellAliases = {
-			ll = "ls -la";
-			gs = "git status";
-			ga = "git add";
-			gc = "git commit";
-			gp = "git push";
-			".." = "cd ..";
-			"..." = "cd ../..";
-			rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#desktop";
-		};
-		oh-my-zsh = {
-			enable = true;
-			theme = "gentoo";
-		};
-	};
+  home.packages = with pkgs; [
+    neofetch
+    zip
+    xz
+    unzip
+    ripgrep
+    jq
+    file
+    which
+    tree
+    i3
+    helix
+  ];
 
-	programs.git = {
-		enable = true;
-		userName = "samkaj";
-		userEmail = "kajavasamuel@gmail.com";
-	};
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -la";
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#desktop";
+    };
+    oh-my-zsh = {
+      enable = true;
+      theme = "gentoo";
+    };
+  };
 
-	programs.bash.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "samkaj";
+    userEmail = "kajavasamuel@gmail.com";
+  };
+
+  programs.bash.enable = true;
 }

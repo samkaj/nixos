@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   # Language servers for Rust, Python, JavaScript, HTML, CSS, TypeScript, C, C++
   programs.neovim = {
@@ -20,19 +20,27 @@
 
       # Harpoon: File navigation tool for quickly toggling between important files.
       harpoon
+
+      # Colors
+      base16-nvim
     ];
-extraConfig = ''
+    extraConfig = ''
       autocmd FileType rust setlocal formatprg=rustfmt
+      autocmd FileType nil setlocal formatprg=nixfmt
       autocmd FileType python setlocal formatprg=black
       autocmd FileType javascript,typescript setlocal formatprg=prettier
       autocmd FileType c,cpp setlocal formatprg=clang-format
 
       lua << EOF
+        vim.opt.termguicolors = true
+
         -- Leader is space
         vim.g.mapleader = " "
         vim.g.maplocalleader = ","
 
         local lspconfig = require("lspconfig")
+
+        vim.cmd("colorscheme base16-cupcake")
 
         -- Add language server configurations
         lspconfig.rust_analyzer.setup{}
@@ -41,7 +49,15 @@ extraConfig = ''
         lspconfig.html.setup{}
         lspconfig.cssls.setup{}
         lspconfig.clangd.setup{}
-        lspconfig.nil_ls.setup{}
+        lspconfig.nil_ls.setup{
+            settings = {
+                ['nil'] = {
+                    formatting = {
+                       command = { "nixfmt" },
+                    },
+                },
+            },
+        }
 
         require("telescope").setup{}
         require("lualine").setup{}
