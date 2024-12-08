@@ -38,7 +38,7 @@
     LC_NUMERIC = "sv_SE.UTF-8";
     LC_PAPER = "sv_SE.UTF-8";
     LC_TELEPHONE = "sv_SE.UTF-8";
-    LC_TIME = "sv_SE.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 
   services.printing.enable = true;
@@ -110,7 +110,15 @@
   };
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      alsa.support32Bit = true;
+    };
+  };
 
   networking.networkmanager.enable = true;
 

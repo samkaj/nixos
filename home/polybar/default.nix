@@ -30,8 +30,8 @@ in
           "window"
         ];
         modules-right = [
-          "kb"
           "vol"
+          "kb"
         ];
         override-redirect = true;
         font-0 = "GeistMono Nerd Font:size=15;3";
@@ -71,17 +71,12 @@ in
       };
 
       "module/vol" = {
-        type = "internal/pulseaudio";
-        format-volume = "<ramp-volume> <label-volume>";
-        ramp-volume-0 = " ";
-        ramp-volume-1 = " ";
-        ramp-volume-2 = " ";
-
-        label-muted = " ";
-        label-muted-foreground = "${colors.error}";
-        label-volume = "%percentage%";
+        type = "internal/alsa";
+        master-soundcard = "default";
+        mixer = "Master";
+        label-volume = "%percentage%%";
+        format-volume = "<label-volume>";
       };
-
     };
   };
 }
