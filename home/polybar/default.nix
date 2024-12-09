@@ -8,12 +8,13 @@ let
     error = "#d57e85";
     hint = "#a3b367";
     accent = "#585062";
+    sep = "#a3b367";
   };
 in
 {
   services.polybar = {
     enable = true;
-    script = "polybar main 2>&1 | tee -a /tmp/polybar.log & disown";
+    script = "";
 
     config = {
       "bar/main" = {
@@ -24,7 +25,7 @@ in
         foreground = "${colors.fg}";
         padding = 1;
         separator = "::";
-        separator-foreground = "${colors.accent}";
+        separator-foreground = "${colors.sep}";
         modules-left = [
           "xworkspaces"
           "window"
@@ -76,6 +77,10 @@ in
         mixer = "Master";
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
+        format-volume-prefix = " ";
+        format-volume-prefix-foreground = "${colors.accent}";
+        format-muted = " ";
+        format-muted-foreground = "${colors.error}";
       };
     };
   };

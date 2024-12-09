@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./home/i3
@@ -9,7 +9,6 @@
   ];
 
   programs.home-manager.enable = true;
-
   home.packages = with pkgs; [
     neofetch
     zip

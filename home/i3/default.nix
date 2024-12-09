@@ -17,6 +17,11 @@ in
     config = {
       modifier = mod;
 
+      startup = [
+        # TODO: handle polybar in nix :)
+        { command = "polybar main 2>&1 | tee -a /tmp/polybar.log & disown"; }
+      ];
+
       gaps = {
         inner = 4;
         outer = 1;
