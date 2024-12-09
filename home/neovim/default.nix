@@ -28,7 +28,7 @@
       autocmd FileType rust setlocal formatprg=rustfmt
       autocmd FileType nil setlocal formatprg=nixfmt
       autocmd FileType python setlocal formatprg=black
-      autocmd FileType javascript,typescript setlocal formatprg=prettier
+      autocmd FileType javascript,typescript,markdown setlocal formatprg=prettier
       autocmd FileType c,cpp setlocal formatprg=clang-format
 
       lua << EOF
