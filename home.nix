@@ -2,8 +2,8 @@
 {
   imports = [
     ./home/i3
-    ./home/alacritty
     ./home/polybar
+    ./home/alacritty
     ./home/helix
     ./home/neovim
   ];

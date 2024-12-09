@@ -14,7 +14,7 @@ in
 {
   services.polybar = {
     enable = true;
-    script = "";
+    script = "polybar main &";
 
     config = {
       "bar/main" = {
@@ -78,7 +78,7 @@ in
         mixer = "Master";
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
-        format-volume-prefix = "  ";
+        format-volume-prefix = "FOO   ";
         format-volume-prefix-foreground = "${colors.accent}";
         format-muted = "  ";
         format-muted-foreground = "${colors.error}";
