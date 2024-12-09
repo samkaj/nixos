@@ -27,15 +27,15 @@
         inherit system;
         modules = [
           ./hosts/desktop/configuration.nix
+
+          # Enable Home Manager as a NixOS module
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            users.users.samkaj = {
-              isNormalUser = true;
-              home = ./home.nix;
-            };
+            home-manager.users.samkaj = import ./home.nix;
           }
+
           (
             { pkgs, ... }:
             {
@@ -46,6 +46,21 @@
               ];
             }
           )
+        ];
+      };
+
+      # Enable home-manager as a standalone flake output
+      homeConfigurations.samkaj = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ./home.nix
+          {
+            home = {
+              username = "samkaj";
+              homeDirectory = "/home/samkaj";
+              stateVersion = "24.05";
+            };
+          }
         ];
       };
     };

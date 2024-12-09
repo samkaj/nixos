@@ -9,7 +9,6 @@
   users.users.samkaj = {
     isNormalUser = true;
     description = "samkaj";
-    home = "home/samkaj";
     extraGroups = [
       "networkmanager"
       "wheel"
