@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   colors = {
     bg = "#fbf1f2";
