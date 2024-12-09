@@ -31,7 +31,10 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.samkaj = import ./home.nix;
+            users.users.samkaj = {
+              isNormalUser = true;
+              home = ./home.nix;
+            };
           }
           (
             { pkgs, ... }:
@@ -47,3 +50,4 @@
       };
     };
 }
+

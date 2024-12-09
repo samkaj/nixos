@@ -26,6 +26,7 @@ in
         padding = 1;
         separator = "::";
         separator-foreground = "${colors.sep}";
+        separator-padding = 2;
         modules-left = [
           "xworkspaces"
           "window"
@@ -77,9 +78,9 @@ in
         mixer = "Master";
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
-        format-volume-prefix = " ";
+        format-volume-prefix = "  ";
         format-volume-prefix-foreground = "${colors.accent}";
-        format-muted = " ";
+        format-muted = "  ";
         format-muted-foreground = "${colors.error}";
       };
     };
