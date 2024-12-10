@@ -33,7 +33,7 @@
       gp = "git push";
       ".." = "cd ..";
       "..." = "cd ../..";
-      rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#desktop";
+      rebuild = "sudo nixos-rebuild switch -j 8 --flake /home/samkaj/.config/nixos#desktop";
     };
     oh-my-zsh = {
       enable = true;

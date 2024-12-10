@@ -48,21 +48,5 @@
           )
         ];
       };
-
-      # Enable home-manager as a standalone flake output
-      homeConfigurations.samkaj = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [
-          ./home.nix
-          {
-            home = {
-              username = "samkaj";
-              homeDirectory = "/home/samkaj";
-              stateVersion = "24.05";
-            };
-          }
-        ];
-      };
     };
 }
-

@@ -15,7 +15,7 @@ in
 {
   services.polybar = {
     enable = true;
-    script = "polybar main &";
+    script = "";
 
     config = {
       "bar/main" = {

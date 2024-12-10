@@ -105,7 +105,7 @@
       gp = "git push";
       ".." = "cd ..";
       "..." = "cd ../..";
-      rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#desktop";
+      rebuild = "sudo nixos-rebuild switch --flake /home/samkaj/.config/nixos#desktop";
       hr = "home-manager --flake /home/samkaj/.config/nixos#samkaj switch &&
       systemctl --user restart polybar";
     };

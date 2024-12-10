@@ -19,7 +19,7 @@ in
 
       startup = [
         # TODO: handle polybar in nix :)
-        # { command = "polybar main"; }
+        { command = "polybar main & disown"; }
       ];
 
       gaps = {
