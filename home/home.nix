@@ -30,9 +30,7 @@
       gp = "git push";
       ".." = "cd ..";
       "..." = "cd ../..";
-      rebuild = "sudo nixos-rebuild switch --impure --flake
-      /home/samkaj/.config/nixos#moomin";
-      hr = "home-manager --flake /home/samkaj/.config/nixos#moomin switch";
+      rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#moomin";
     };
     oh-my-zsh = {
       enable = true;

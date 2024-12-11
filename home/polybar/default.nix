@@ -27,14 +27,16 @@ in
         padding = 1;
         separator = "::";
         separator-foreground = "${colors.sep}";
-        separator-padding = 2;
+        separator-padding = 1;
         modules-left = [
           "xworkspaces"
           "window"
         ];
         modules-right = [
+          "eth"
           "vol"
           "kb"
+          "date"
         ];
         override-redirect = true;
         font-0 = "GeistMono Nerd Font:size=15;3";
@@ -79,10 +81,45 @@ in
         mixer = "Master";
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
-        format-volume-prefix = "BAR   ";
+        format-volume-prefix = "  ";
         format-volume-prefix-foreground = "${colors.accent}";
         format-muted = "  ";
         format-muted-foreground = "${colors.error}";
+      };
+
+      "module/date" = {
+        type = "internal/date";
+        date = "%a %d";
+        time = "%H:%M";
+
+        format = "<label>";
+        label = "%date%, %time%";
+        label-foreground = "${colors.fg}";
+      };
+
+      "module/wifi" = {
+        format-connected = "<ramp-signal> <label-connected>";
+        label-connected = "%downspeed:9%";
+
+        ramp-signal-0 = "";
+        ramp-signal-1 = "";
+        ramp-signal-2 = "";
+        ramp-signal-3 = "";
+        ramp-signal-4 = "";
+        ramp-signal-5 = "";
+      };
+
+      "module/eth" = {
+        type = "internal/network";
+        interface-type = "wired";
+        interface = "enp34s0"; # can I use a wildcard?
+
+        format-connected = "<label-connected>";
+        format-connected-prefix = " ";
+        format-connected-prefix-foreground = "${colors.accent}";
+        label-connected = "%downspeed% | %upspeed%";
+        label-disconnected = "󰈂";
+        label-disconnected-foreground = "${colors.error}";
       };
     };
   };
