@@ -19,25 +19,27 @@
       rust-overlay,
       ...
     }@inputs:
-    let
-      inherit (self) outputs;
-    in
     {
-      nixosConfigurations = {
-        specialArgs = {
-          inherit inputs outputs;
-        };
-        moomin = nixpkgs.lib.nixosSystem { modules = [ ./hosts/moomin]; };
-      };
-
-      homeConfigurations = {
-        "samkaj@moomin" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [ ./home/home.nix ];
-        };
+      nixosConfigurations.moomin = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/moomin/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.samkaj = import ./home/home.nix;
+          }
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [
+                pkgs.rust-bin.stable.latest.default
+                pkgs.rust-analyzer
+              ];
+            }
+          )
+        ];
       };
     };
 }

@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
 {
-  nixpkgs = {
-    overlays = [ pkgs.rust-overlay.overlays.default ];
-  };
+    imports = [ ../modules/i3.nix ../modules/nvim.nix ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -96,33 +94,9 @@
     zsh
     clang
     home-manager
-    rust-bin.stable.latest.default
-    rust-analyzer
   ];
 
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -la";
-      gs = "git status";
-      ga = "git add";
-      gc = "git commit";
-      gp = "git push";
-      ".." = "cd ..";
-      "..." = "cd ../..";
-      rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#desktop";
-      hr = "home-manager --flake /home/samkaj/.config/nixos#samkaj switch &&
-      systemctl --user restart polybar";
-    };
-  };
-
-  programs.bash.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName = "samkaj";
-    userEmail = "kajavasamuel@gmail.com";
-  };
+  programs.zsh.enable = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;

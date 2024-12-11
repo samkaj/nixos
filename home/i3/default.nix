@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   lib,
   ...
 }:
@@ -18,8 +16,7 @@ in
       modifier = mod;
 
       startup = [
-        # TODO: handle polybar in nix :)
-        { command = "polybar main & disown"; }
+        { command = "systemctl --user restart polybar"; }
       ];
 
       gaps = {
