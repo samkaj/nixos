@@ -27,7 +27,7 @@
         specialArgs = {
           inherit inputs outputs;
         };
-        moomin = nixpkgs.lib.nixosSystem { modules = [ ./nixos/hosts/moomin]; };
+        moomin = nixpkgs.lib.nixosSystem { modules = [ ./hosts/moomin]; };
       };
 
       homeConfigurations = {
