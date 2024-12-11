@@ -94,6 +94,7 @@
     zsh
     clang
     home-manager
+    ripgrep
   ];
 
   programs.zsh.enable = true;

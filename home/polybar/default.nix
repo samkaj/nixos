@@ -79,7 +79,7 @@ in
         mixer = "Master";
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
-        format-volume-prefix = "FOO   ";
+        format-volume-prefix = "BAR   ";
         format-volume-prefix-foreground = "${colors.accent}";
         format-muted = "  ";
         format-muted-foreground = "${colors.error}";
