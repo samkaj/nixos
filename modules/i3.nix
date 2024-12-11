@@ -1,7 +1,4 @@
-{ pkgs, lib, ... }:
-let
-  mod = "Mod4";
-in
+{ pkgs, ... }:
 {
   services.displayManager.defaultSession = "none+i3";
   services.xserver = {
@@ -9,6 +6,7 @@ in
     enable = true;
     windowManager.i3 = {
       enable = true;
+      # packages which are only started through i3
       extraPackages = with pkgs; [
         rofi
         feh

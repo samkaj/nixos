@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration";
+  description = "samkaj's nixos config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -12,41 +12,32 @@
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
       home-manager,
       rust-overlay,
       ...
-    }:
+    }@inputs:
     let
-      system = "x86_64-linux";
+      inherit (self) outputs;
     in
     {
-      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/desktop/configuration.nix
+      nixosConfigurations = {
+        specialArgs = {
+          inherit inputs outputs;
+        };
+        moomin = nixpkgs.lib.nixosSystem { modules = [ ./nixos/hosts/moomin]; };
+      };
 
-          # Enable Home Manager as a NixOS module
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.samkaj = import ./home.nix;
-          }
-
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [
-                pkgs.rust-bin.stable.latest.default
-                pkgs.rust-analyzer
-              ];
-            }
-          )
-        ];
+      homeConfigurations = {
+        "samkaj@moomin" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./home/home.nix ];
+        };
       };
     };
 }
