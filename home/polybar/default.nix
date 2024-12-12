@@ -49,7 +49,7 @@ in
         label-monitor = "%name%";
         format = "<label-state>";
 
-        label-active-foreground = "${colors.accent}";
+        label-active-foreground = "${colors.fg}";
         label-active-background = "${colors.bg}";
         label-active = "%name%";
         label-active-padding = 1;
@@ -57,7 +57,7 @@ in
         label-active-underline-size = 5;
 
         label-occupied = "%name%";
-        label-occupied-foreground = "${colors.fg}";
+        label-occupied-foreground = "${colors.fg_alt}";
         label-occupied-background = "${colors.bg}";
         label-occupied-padding = 1;
       };
