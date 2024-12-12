@@ -39,8 +39,9 @@
         vim.g.maplocalleader = ","
 
         local lspconfig = require("lspconfig")
-
-        vim.cmd("colorscheme base16-cupcake")
+        
+        vim.opt.background = "dark"
+        vim.cmd("colorscheme base16-rose-pine")
 
         -- Add language server configurations
         lspconfig.rust_analyzer.setup{}

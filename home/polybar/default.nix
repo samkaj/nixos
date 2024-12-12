@@ -1,15 +1,15 @@
 { pkgs, ... }:
 let
   colors = {
-    bg = "#fbf1f2";
-    fg = "#8b8198";
-    fg_alt = "#ac9ebe";
-    bg_alt = "#e3dadb";
-    warn = "#ffaa88";
-    error = "#d57e85";
-    hint = "#a3b367";
-    accent = "#585062";
-    sep = "#a3b367";
+    bg = "#191724";
+    fg = "#e0def4";
+    fg_alt = "#908caa";
+    bg_alt = "#1f1d2e";
+    warn = "#f6c177";
+    error = "#eb6f92";
+    hint = "#c4a7e7";
+    accent = "#403d52";
+    sep = "#524f67";
   };
 in
 {
@@ -101,12 +101,13 @@ in
         format-connected = "<ramp-signal> <label-connected>";
         label-connected = "%downspeed:9%";
 
-        ramp-signal-0 = "";
-        ramp-signal-1 = "";
-        ramp-signal-2 = "";
-        ramp-signal-3 = "";
-        ramp-signal-4 = "";
-        ramp-signal-5 = "";
+        ramp-signal-0-foreground = "${colors.error}";
+        ramp-signal-0 = "󰤫 ";
+        ramp-signal-1 = "󰤯 ";
+        ramp-signal-2 = "󰤟 ";
+        ramp-signal-3 = "󰤢 ";
+        ramp-signal-4 = "󰤥 ";
+        ramp-signal-5 = "󰤨 ";
       };
 
       "module/eth" = {

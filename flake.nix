@@ -13,12 +13,11 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       rust-overlay,
       ...
-    }@inputs:
+    }:
     {
       nixosConfigurations.moomin = nixpkgs.lib.nixosSystem {
         modules = [
