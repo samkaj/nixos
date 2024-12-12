@@ -95,6 +95,7 @@
     clang
     home-manager
     ripgrep
+    neofetch
   ];
 
   programs.zsh.enable = true;

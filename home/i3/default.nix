@@ -17,6 +17,7 @@ in
 
       startup = [
         { command = "systemctl --user restart polybar"; }
+        { command = "feh --bg-scale ~/wallpaper.jpg"; } # uh oh not reproducible
       ];
 
       gaps = {
@@ -47,19 +48,19 @@ in
 
       colors = {
         focused = {
-          background = "#444444";
-          border = "#444444";
-          childBorder = "#444444";
-          indicator = "#444444";
-          text = "#444444";
+          background = "#6e6a86";
+          border = "#6e6a86";
+          childBorder = "#6e6a86";
+          indicator = "#6e6a86";
+          text = "#6e6a86";
         };
 
         unfocused = {
-          background = "#080808";
-          border = "#080808";
-          childBorder = "#080808";
-          indicator = "#080808";
-          text = "#080808";
+          background = "#191724";
+          border = "#191724";
+          childBorder = "#191724";
+          indicator = "#191724";
+          text = "#191724";
         };
       };
 
