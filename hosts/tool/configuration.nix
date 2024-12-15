@@ -4,7 +4,7 @@
     ../shared.nix
     ./hardware-configuration.nix
   ];
-  networking.hostName = "moomin";
+  networking.hostName = "tool";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

@@ -19,9 +19,9 @@
       ...
     }:
     {
-      nixosConfigurations.moomin = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.tool = nixpkgs.lib.nixosSystem {
         modules = [
-          ./hosts/moomin/configuration.nix
+          ./hosts/tool/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
