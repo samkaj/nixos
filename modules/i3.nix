@@ -12,7 +12,7 @@
         feh
         picom
         dmenu
-        polybar
+        (polybar.override { alsaSupport = true; })
       ];
     };
 
