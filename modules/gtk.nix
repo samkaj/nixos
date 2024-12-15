@@ -5,7 +5,6 @@
     lxappearance
     rose-pine-gtk-theme
     rose-pine-icon-theme
-    rose-pine-cursor
     dconf
   ];
 
