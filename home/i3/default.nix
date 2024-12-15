@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}:
+{ lib, ... }:
 let
   mod = "Mod4";
 in
@@ -65,7 +62,7 @@ in
       };
 
       keybindings = lib.mkOptionDefault {
-        "${mod}+d" = "exec dmenu_run";
+        "${mod}+d" = "exec rofi -show drun";
         "${mod}+Return" = "exec alacritty";
         "${mod}+Shift+q" = "kill";
         "${mod}+r" = "mode resize";
@@ -84,6 +81,7 @@ in
         "${mod}+Shift+j" = "move down";
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
+
       };
 
       bars = [ ];

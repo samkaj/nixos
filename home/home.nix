@@ -7,6 +7,7 @@
     ./neovim
     ./polybar
     ./gtk
+    ./rofi
   ];
 
   home = {
