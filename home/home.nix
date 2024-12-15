@@ -6,6 +6,7 @@
     ./i3
     ./neovim
     ./polybar
+    ./gtk
   ];
 
   home = {

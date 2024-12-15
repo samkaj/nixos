@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 {
-    imports = [ ../modules/i3.nix ../modules/nvim.nix ];
+  imports = [
+    ../modules/i3.nix
+    ../modules/nvim.nix
+    ../modules/gtk.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
