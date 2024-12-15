@@ -28,6 +28,7 @@
       ga = "git add";
       gc = "git commit";
       gp = "git push";
+      feat = "function _feat() { git commit -m '[feat] $*'; }; _feat";
       ".." = "cd ..";
       "..." = "cd ../..";
       rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#moomin";
