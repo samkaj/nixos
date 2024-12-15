@@ -12,5 +12,6 @@
 
   environment.variables = {
     GTK_THEME = "rose-pine-moon";
+    XCURSOR_SIZE = "16";
   };
 }
