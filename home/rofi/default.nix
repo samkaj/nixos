@@ -15,32 +15,24 @@ in
 {
   programs.rofi = {
     enable = true;
-    extraConfig = ''
-      configuration {
-        font: "GeistMono Nerd Font 12";
-        show-icons: false;
-        
-        /* Colors */
-        background: ${colors.bg};
-        foreground: ${colors.fg};
-        selected-background: ${colors.bg_alt};
-        selected-foreground: ${colors.fg};
-        alternate-row-color: true;
-        alternate-background: ${colors.accent};
-        
-        /* Window settings */
-        location: 0;
-        anchor: 0;
-        width: 50%;
-        lines: 10;
-        fixed-height: true;
-        padding: 10;
-        
-        /* Element positions */
-        sidebar-mode: false;
-        show-match: true;
-      }
-    '';
+    extraConfig = {
+      font = "GeistMono Nerd Font 12";
+      show-icons = false;
+
+      background = colors.bg;
+      foreground = colors.fg;
+      selected-background = colors.bg_alt;
+      selected-foreground = colors.fg;
+
+      location = 0;
+      width = "50%";
+      lines = 10;
+      fixed-height = true;
+      padding = 10;
+
+      sidebar-mode = false;
+      show-match = true;
+    };
   };
 }
 
