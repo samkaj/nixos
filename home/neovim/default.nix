@@ -30,13 +30,32 @@
       autocmd FileType python setlocal formatprg=black
       autocmd FileType javascript,typescript,markdown setlocal formatprg=prettier
       autocmd FileType c,cpp setlocal formatprg=clang-format
+      set noshowmode
 
       lua << EOF
         vim.opt.termguicolors = true
+        vim.cmd("let g:netrw_banner = 0")
 
         -- Leader is space
         vim.g.mapleader = " "
         vim.g.maplocalleader = ","
+
+        local keymap = vim.api.nvim_set_keymap
+        local opts = { noremap = true, silent = true }
+        keymap('n', '<C-h>', '<C-w>h', opts)
+        keymap('n', '<C-j>', '<C-w>j', opts)
+        keymap('n', '<C-k>', '<C-w>k', opts)
+        keymap('n', '<C-l>', '<C-w>l', opts)
+
+        vim.api.nvim_create_autocmd('FileType', {
+          pattern = 'netrw',
+          callback = function()
+            vim.api.nvim_buf_set_keymap(0, 'n', '<C-h>', '<C-w>h', opts)
+            vim.api.nvim_buf_set_keymap(0, 'n', '<C-j>', '<C-w>j', opts)
+            vim.api.nvim_buf_set_keymap(0, 'n', '<C-k>', '<C-w>k', opts)
+            vim.api.nvim_buf_set_keymap(0, 'n', '<C-l>', '<C-w>l', opts)
+          end
+        })
 
         local lspconfig = require("lspconfig")
         
