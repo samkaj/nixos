@@ -23,6 +23,13 @@
 
       # Colors
       base16-nvim
+
+      (nvim-treesitter.withPlugins (p: [
+        p.c
+        p.rust
+        p.nix
+        p.python
+      ]))
     ];
     extraConfig = ''
       autocmd FileType rust setlocal formatprg=rustfmt
