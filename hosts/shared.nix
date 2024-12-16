@@ -105,15 +105,8 @@
   programs.zsh.enable = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-      alsa.support32Bit = true;
-    };
-  };
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
 
   networking.networkmanager.enable = true;
 

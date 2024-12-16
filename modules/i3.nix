@@ -12,11 +12,10 @@
         feh
         picom
         dmenu
-        (polybar.override { alsaSupport = true; })
       ];
     };
 
     xkb.layout = "us,se";
-    xkb.options = "grp:ctrl_space_toggle";
+    xkb.options = "grp:ctrl_shift_space_toggle";
   };
 }

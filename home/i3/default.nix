@@ -13,7 +13,7 @@ in
       modifier = mod;
 
       startup = [
-        { command = "systemctl --user restart polybar"; }
+        { command = "systemctl --user start polybar"; }
         { command = "feh --bg-scale ~/wallpaper.jpg"; } # uh oh not reproducible
       ];
 

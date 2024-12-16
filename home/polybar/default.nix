@@ -14,8 +14,12 @@ let
 in
 {
   services.polybar = {
+    package = pkgs.polybar.override {
+      pulseSupport = true;
+    };
+
     enable = true;
-    script = "polybar main & disown";
+    script = "polybar >> /tmp/polybar.log 2>&1 & disown";
 
     config = {
       "bar/main" = {
@@ -76,9 +80,7 @@ in
       };
 
       "module/vol" = {
-        type = "internal/alsa";
-        master-soundcard = "default";
-        mixer = "Master";
+        type = "internal/pulseaudio";
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
         format-volume-prefix = "  ";
