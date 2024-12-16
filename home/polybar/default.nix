@@ -14,9 +14,7 @@ let
 in
 {
   services.polybar = {
-    package = pkgs.polybar.override {
-      pulseSupport = true;
-    };
+    package = pkgs.polybar.override { pulseSupport = true; };
 
     enable = true;
     script = "polybar >> /tmp/polybar.log 2>&1 & disown";
@@ -37,6 +35,8 @@ in
           "window"
         ];
         modules-right = [
+          "mem"
+          "cpu"
           "eth"
           "vol"
           "kb"
@@ -85,7 +85,7 @@ in
         format-volume = "<label-volume>";
         format-volume-prefix = "  ";
         format-volume-prefix-foreground = "${colors.accent}";
-        format-muted = "  ";
+        format-muted = "";
         format-muted-foreground = "${colors.error}";
       };
 
@@ -123,6 +123,23 @@ in
         label-connected = "%downspeed% | %upspeed%";
         label-disconnected = "󰈂";
         label-disconnected-foreground = "${colors.error}";
+      };
+
+      "module/cpu" = {
+        type = "internal/cpu";
+        format = "<label>";
+        format-prefix = "%{T2}  ";
+        format-prefix-foreground = "${colors.accent}";
+        label = "%percentage%%";
+      };
+
+      "module/mem" = {
+        type = "internal/memory";
+        format = "<label>";
+        format-prefix = "%{T2}  ";
+        format-prefix-foreground = "${colors.accent}";
+        label = "%gb_used%/%gb_free%";
+        format-warn-foreground = "${colors.error}";
       };
     };
   };
