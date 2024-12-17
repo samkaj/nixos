@@ -50,7 +50,7 @@ configuration {
     alternate-urgent-foreground: var(background);
     alternate-active-background: var(active);
     alternate-active-foreground: var(background);
-    font: "GeistMono Nerd Font 12";
+    font: "JetBrainsMono Nerd Font 14";
 }
 
 /*****----- Main Window -----*****/

@@ -17,10 +17,10 @@
 
       font = {
         normal = {
-          family = "GeistMono Nerd Font";
+          family = "JetBrainsMono Nerd Font";
           style = "Regular";
         };
-        size = 12;
+        size = 13;
         offset = {
           x = -1;
         };
