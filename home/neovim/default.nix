@@ -30,6 +30,8 @@
         p.nix
         p.python
       ]))
+
+      copilot-vim
     ];
     extraConfig = ''
       autocmd FileType rust setlocal formatprg=rustfmt
@@ -46,6 +48,9 @@
         -- Leader is space
         vim.g.mapleader = " "
         vim.g.maplocalleader = ","
+
+        -- Leader y yanks to system clipboard
+        vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true })
 
         local keymap = vim.api.nvim_set_keymap
         local opts = { noremap = true, silent = true }

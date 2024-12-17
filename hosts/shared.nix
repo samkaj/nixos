@@ -54,7 +54,7 @@
       noto-fonts
       noto-fonts-emoji
       gyre-fonts
-      (nerdfonts.override { fonts = [ "GeistMono" ]; })
+      (nerdfonts.override { fonts = [ "GeistMono" "JetBrainsMono" ]; })
     ];
 
     enableDefaultPackages = false;
@@ -100,6 +100,7 @@
     home-manager
     ripgrep
     neofetch
+    xsel
   ];
 
   programs.zsh.enable = true;
