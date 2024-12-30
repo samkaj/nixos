@@ -3,6 +3,7 @@ let
   mod = "Mod4";
 in
 {
+  xsession.initExtra = "xset r rate 250 50";
   xsession.windowManager.i3 = {
     extraConfig = ''
       default_border pixel 1

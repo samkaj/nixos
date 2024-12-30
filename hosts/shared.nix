@@ -86,6 +86,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    file
     wget
     curl
     git
@@ -101,6 +102,12 @@
     ripgrep
     neofetch
     xsel
+    deno
+    nodejs
+    google-chrome
+    unzip
+    zip
+    tmux
   ];
 
   programs.zsh.enable = true;

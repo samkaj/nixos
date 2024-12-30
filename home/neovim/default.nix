@@ -29,6 +29,7 @@
         p.rust
         p.nix
         p.python
+        p.typescript
       ]))
 
       copilot-vim
@@ -77,7 +78,6 @@
         -- Add language server configurations
         lspconfig.rust_analyzer.setup{}
         lspconfig.pyright.setup{}
-        lspconfig.tsserver.setup{}
         lspconfig.html.setup{}
         lspconfig.cssls.setup{}
         lspconfig.clangd.setup{}

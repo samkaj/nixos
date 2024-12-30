@@ -7,6 +7,7 @@
     clang-tools # For clang-format
     nil # Nix language server
     nixfmt-rfc-style # Nix formatter
+    typescript 
     prettierd
   ];
 }
