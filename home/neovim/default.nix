@@ -24,6 +24,8 @@
       # Colors
       base16-nvim
 
+      rustaceanvim
+
       (nvim-treesitter.withPlugins (p: [
         p.c
         p.rust
@@ -76,7 +78,6 @@
         vim.cmd("colorscheme base16-rose-pine")
 
         -- Add language server configurations
-        lspconfig.rust_analyzer.setup{}
         lspconfig.pyright.setup{}
         lspconfig.html.setup{}
         lspconfig.cssls.setup{}
