@@ -32,6 +32,8 @@
 
       rustaceanvim
 
+      tmux-nvim
+
       (nvim-treesitter.withPlugins (p: [
         p.c
         p.rust
@@ -80,6 +82,8 @@
         
         vim.opt.background = "dark"
         vim.cmd("colorscheme base16-rose-pine")
+
+        require("tmux").setup()
 
         require("cmp").setup(
             {
