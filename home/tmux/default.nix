@@ -28,24 +28,40 @@
       if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
           "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
 
-
       # Set new panes to open in current directory
       bind c new-window -c "#{pane_current_path}"
       bind v split-window -c "#{pane_current_path}"
       bind h split-window -h -c "#{pane_current_path}"
-
       bind-key -T copy-mode-vi 'C-h' select-pane -L
       bind-key -T copy-mode-vi 'C-j' select-pane -D
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
-
       bind-key -n 'S-Left' resize-pane -L 5
       bind-key -n 'S-Right' resize-pane -R 5
       bind-key -n 'S-Up' resize-pane -U 5
       bind-key -n 'S-Down' resize-pane -D 5
-
       setw -g mode-keys vi
+      set -g visual-activity off
+      set -g visual-bell off
+      set -g visual-silence off
+      setw -g monitor-activity off
+      set -g bell-action none
+      setw -g mode-style 'fg=colour1 bg=colour12 bold'
+      set -g pane-border-style 'fg=colour0'
+      set -g pane-active-border-style 'fg=colour8'
+      set -g status-position top 
+      set -g status-justify left
+      set -g status-style 'fg=colour15'
+      set -g status-left ""
+      set -g status-left-length 10
+      set -g status-right ""
+      setw -g window-status-current-style 'fg=colour0 bg=colour12 bold'
+      setw -g window-status-current-format ' #I #W #F '
+      setw -g window-status-style 'fg=colour12 dim'
+      setw -g window-status-format ' #I #[fg=colour12]#W #[fg=colour12]#F '
+      setw -g window-status-bell-style 'fg=colour2 bg=colour4 bold'
+      set -g message-style 'fg=colour2 bg=colour0 bold'
     '';
   };
 }
