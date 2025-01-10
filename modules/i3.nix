@@ -16,6 +16,6 @@
     };
 
     xkb.layout = "us,se";
-    xkb.options = "grp:ctrl_space_toggle";
+    xkb.options = "grp:shift_space_toggle";
   };
 }
