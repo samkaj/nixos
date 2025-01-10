@@ -9,8 +9,8 @@
 
       window = {
         padding = {
-          x = 8;
-          y = 8;
+          x = 6;
+          y = 6;
         };
         dynamic_padding = true;
       };
@@ -23,6 +23,7 @@
         size = 13;
         offset = {
           x = -1;
+          y = -1;
         };
       };
 
@@ -36,7 +37,7 @@
 
         cursor = {
           text = "#e0def4";
-          cursor = "#524f67";
+          cursor = "#393552";
         };
 
         vi_mode_cursor = {
