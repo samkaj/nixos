@@ -31,6 +31,7 @@
       ga = "git add";
       gc = "git commit";
       gp = "git push";
+      cd = "z";
       ".." = "cd ..";
       "..." = "cd ../..";
       rebuild = "sudo nixos-rebuild switch --impure --flake /home/samkaj/.config/nixos#tool";

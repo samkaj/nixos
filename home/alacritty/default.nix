@@ -1,4 +1,9 @@
 {
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.alacritty = {
     enable = true;
 

@@ -108,6 +108,7 @@
     unzip
     zip
     tmux
+    zoxide
   ];
 
   programs.zsh.enable = true;
