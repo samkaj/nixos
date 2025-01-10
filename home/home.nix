@@ -37,7 +37,7 @@
     };
 
     initExtra = ''
-      PROMPT="%B%F{blue}[%f%b%B%n%b%B%F{blue}@%f%b%B%m%b%B%F{blue}]%f%b%B% ~%b%B%F{magenta} λ %f%b"
+      PROMPT="%B%F{blue}[%f%b%B%n%b%B%F{blue}@%f%b%B%m%b%B%F{blue}] %f%b%B%~%b%B%F{magenta} λ %f%b"
     '';
   };
 
