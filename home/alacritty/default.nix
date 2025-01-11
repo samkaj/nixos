@@ -25,7 +25,7 @@
           family = "JetBrainsMono Nerd Font";
           style = "Regular";
         };
-        size = 13;
+        size = 10;
         offset = {
           x = -1;
           y = -1;
