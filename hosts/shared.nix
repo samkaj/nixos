@@ -4,6 +4,7 @@
     ../modules/i3.nix
     ../modules/nvim.nix
     ../modules/gtk.nix
+    ../modules/gaming.nix
   ];
 
   nix.settings.experimental-features = [
