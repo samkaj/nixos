@@ -1,16 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
-  colors = {
-    bg = "#191724";
-    fg = "#e0def4";
-    fg_alt = "#908caa";
-    bg_alt = "#1f1d2e";
-    warn = "#f6c177";
-    error = "#eb6f92";
-    hint = "#c4a7e7";
-    accent = "#403d52";
-    sep = "#524f67";
-  };
+  palette = config.colorScheme.palette;
 in
 {
   services.polybar = {
@@ -24,11 +14,11 @@ in
         bottom = false;
         width = "100%";
         height = "38";
-        background = "${colors.bg}";
-        foreground = "${colors.fg}";
+        background = "#${palette.base00}";
+        foreground = "#${palette.base05}";
         padding = 1;
         separator = "::";
-        separator-foreground = "${colors.sep}";
+        separator-foreground = "#${palette.base04}";
         separator-padding = 1;
         modules-left = [
           "xworkspaces"
@@ -53,23 +43,23 @@ in
         label-monitor = "%name%";
         format = "<label-state>";
 
-        label-active-foreground = "${colors.fg}";
-        label-active-background = "${colors.bg}";
+        label-active-foreground = "#${palette.base05}";
+        label-active-background = "#${palette.base00}";
         label-active = "%name%";
         label-active-padding = 1;
-        label-active-underline = "${colors.accent}";
+        label-active-underline = "#${palette.base0C}";
         label-active-underline-size = 5;
 
         label-occupied = "%name%";
-        label-occupied-foreground = "${colors.fg_alt}";
-        label-occupied-background = "${colors.bg}";
+        label-occupied-foreground = "#${palette.base05}";
+        label-occupied-background = "#${palette.base00}";
         label-occupied-padding = 1;
       };
 
       "module/window" = {
         type = "internal/xwindow";
-        format-background = "${colors.bg}";
-        format-foreground = "${colors.fg}";
+        format-background = "#${palette.base00}";
+        format-foreground = "#${palette.base05}";
         label-maxlen = 50;
         format-padding = 1;
       };
@@ -84,9 +74,9 @@ in
         label-volume = "%percentage%%";
         format-volume = "<label-volume>";
         format-volume-prefix = "  ";
-        format-volume-prefix-foreground = "${colors.accent}";
+        format-volume-prefix-foreground = "#${palette.base0C}";
         format-muted = "";
-        format-muted-foreground = "${colors.error}";
+        format-muted-foreground = "#${palette.base08}";
       };
 
       "module/date" = {
@@ -96,14 +86,14 @@ in
 
         format = "<label>";
         label = "%date%, %time%";
-        label-foreground = "${colors.fg}";
+        label-foreground = "#${palette.base05}";
       };
 
       "module/wifi" = {
         format-connected = "<ramp-signal> <label-connected>";
         label-connected = "%downspeed:9%";
 
-        ramp-signal-0-foreground = "${colors.error}";
+        ramp-signal-0-foreground = "#${palette.base08}";
         ramp-signal-0 = "󰤫 ";
         ramp-signal-1 = "󰤯 ";
         ramp-signal-2 = "󰤟 ";
@@ -119,17 +109,17 @@ in
 
         format-connected = "<label-connected>";
         format-connected-prefix = " ";
-        format-connected-prefix-foreground = "${colors.accent}";
+        format-connected-prefix-foreground = "#${palette.base0C}";
         label-connected = "%downspeed% | %upspeed%";
         label-disconnected = "󰈂";
-        label-disconnected-foreground = "${colors.error}";
+        label-disconnected-foreground = "#${palette.base08}";
       };
 
       "module/cpu" = {
         type = "internal/cpu";
         format = "<label>";
         format-prefix = "%{T2}  ";
-        format-prefix-foreground = "${colors.accent}";
+        format-prefix-foreground = "#${palette.base0C}";
         label = "%percentage%%";
       };
 
@@ -137,9 +127,9 @@ in
         type = "internal/memory";
         format = "<label>";
         format-prefix = "%{T2}  ";
-        format-prefix-foreground = "${colors.accent}";
+        format-prefix-foreground = "#${palette.base0C}";
         label = "%gb_used%/%gb_free%";
-        format-warn-foreground = "${colors.error}";
+        format-warn-foreground = "#${palette.base08}";
       };
     };
   };

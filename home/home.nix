@@ -1,4 +1,4 @@
-{ ... }:
+{ nix-colors, ... }:
 {
   imports = [
     ./alacritty
@@ -9,7 +9,10 @@
     ./gtk
     ./rofi
     ./tmux
+    nix-colors.homeManagerModules.default
   ];
+
+  colorScheme = nix-colors.colorSchemes.black-metal-burzum;
 
   home = {
     homeDirectory = "/home/samkaj";

@@ -9,6 +9,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs =
@@ -16,10 +17,12 @@
       nixpkgs,
       home-manager,
       rust-overlay,
+      nix-colors,
       ...
     }:
     {
       nixosConfigurations.tool = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit nix-colors; };
         modules = [
           ./hosts/tool/configuration.nix
           home-manager.nixosModules.home-manager
@@ -28,6 +31,7 @@
             home-manager.backupFileExtension = "hm.bak";
             home-manager.useUserPackages = true;
             home-manager.users.samkaj = import ./home/home.nix;
+            home-manager.extraSpecialArgs = { inherit nix-colors; };
           }
           (
             { pkgs, ... }:
