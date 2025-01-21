@@ -56,8 +56,8 @@ in
       })
 
       ${builtins.readFile ./opts.lua}
-      ${builtins.readFile ./plugins.lua}
       ${builtins.readFile ./keybinds.lua}
+      ${builtins.readFile ./plugins.lua}
       ${builtins.readFile ./lsp.lua}
       ${builtins.readFile ./lualine.lua}
     '';

@@ -49,3 +49,6 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.api.nvim_buf_set_keymap(0, 'n', '<C-l>', '<C-w>l', opts)
     end
 })
+
+vim.keymap.set("n", "<leader>hh", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { silent = true })
+vim.keymap.set("n", "<leader>hc", ':lua require("harpoon.mark").add_file()<CR>', { silent = true })
