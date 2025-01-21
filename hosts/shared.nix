@@ -110,6 +110,7 @@
     zip
     tmux
     zoxide
+    zoom-us
   ];
 
   programs.zsh.enable = true;
