@@ -1,6 +1,7 @@
-{ lib, ... }:
+{ config, lib, ... }:
 let
   mod = "Mod4";
+  palette = config.colorScheme.palette;
 in
 {
   xsession.initExtra = "xset r rate 250 50";
@@ -46,19 +47,19 @@ in
 
       colors = {
         focused = {
-          background = "#6e6a86";
-          border = "#6e6a86";
-          childBorder = "#6e6a86";
-          indicator = "#6e6a86";
-          text = "#6e6a86";
+          background = "#${palette.base00}";
+          border = "#${palette.base0C}";
+          childBorder = "#${palette.base0C}";
+          indicator = "#${palette.base0C}";
+          text = "#${palette.base0C}";
         };
 
         unfocused = {
-          background = "#191724";
-          border = "#191724";
-          childBorder = "#191724";
-          indicator = "#191724";
-          text = "#191724";
+          background = "#${palette.base00}";
+          border = "#${palette.base03}";
+          childBorder = "#${palette.base03}";
+          indicator = "#${palette.base03}";
+          text = "#${palette.base03}";
         };
       };
 
