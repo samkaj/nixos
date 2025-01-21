@@ -18,7 +18,7 @@ in
         foreground = "#${palette.base05}";
         padding = 1;
         separator = "::";
-        separator-foreground = "#${palette.base04}";
+        separator-foreground = "#${palette.base03}";
         separator-padding = 1;
         modules-left = [
           "xworkspaces"
@@ -128,7 +128,7 @@ in
         format = "<label>";
         format-prefix = "%{T2}  ";
         format-prefix-foreground = "#${palette.base0C}";
-        label = "%gb_used%/%gb_free%";
+        label = "%gb_used%";
         format-warn-foreground = "#${palette.base08}";
       };
     };
