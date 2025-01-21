@@ -33,8 +33,8 @@ in
           "date"
         ];
         override-redirect = true;
-        font-0 = "JetBrainsMono Nerd Font:size=15;3";
-        font-1 = "JetBrainsMono Nerd Font:size=15;4";
+        font-0 = "JetBrainsMono Nerd Font:size=12;3";
+        font-1 = "JetBrainsMono Nerd Font:size=12;4";
         line-size = 2;
       };
 
