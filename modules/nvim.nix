@@ -9,5 +9,8 @@
     nixfmt-rfc-style # Nix formatter
     typescript 
     prettierd
+    lua
+    luaformatter
+    lua-language-server
   ];
 }
