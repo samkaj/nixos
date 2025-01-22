@@ -3,12 +3,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "rose-pine-moon";
-      package = pkgs.rose-pine-gtk-theme;
-    };
-    iconTheme = {
-      name = "oomox-rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
+      name = "Graphite-Dark";
+      package = pkgs.graphite-gtk-theme;
     };
   };
 }

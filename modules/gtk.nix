@@ -3,15 +3,14 @@
   environment.systemPackages = with pkgs; [
     gtk3
     lxappearance
-    rose-pine-gtk-theme
-    rose-pine-icon-theme
+    graphite-gtk-theme
     dconf
   ];
 
   services.dbus.enable = true;
 
   environment.variables = {
-    GTK_THEME = "rose-pine-moon";
+    GTK_THEME = "Graphite-Dark";
     XCURSOR_SIZE = "16";
   };
 }
