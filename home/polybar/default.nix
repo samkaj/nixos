@@ -16,6 +16,8 @@ in
         height = "38";
         background = "#${palette.base00}";
         foreground = "#${palette.base05}";
+        border-bottom-size= 1;
+        border-color = "#${palette.base03}";
         padding = 1;
         separator = "::";
         separator-foreground = "#${palette.base03}";
