@@ -110,7 +110,9 @@
     zip
     tmux
     zoxide
+    scrot
     zoom-us
+    xclip
   ];
 
   programs.zsh.enable = true;

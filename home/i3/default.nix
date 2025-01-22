@@ -84,6 +84,7 @@ in
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
+        "${mod}+Shift+s" = "exec scrot -z - | xclip -selection clipboard -target image/png";
       };
 
       bars = [ ];
