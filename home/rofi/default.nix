@@ -7,6 +7,8 @@ let
         text-color: #${palette.base05};
         border-color: #${palette.base01};
         font: "JetBrainsMono Nerd Font 12";
+        padding: 2px 8px;
+        vertical-align: 0.5;
     }
 
     window {
@@ -15,11 +17,19 @@ let
         width: 100%;
         padding: 4px;
         children: [ horibox ];
+        border: 2px 0 0 0;
+        border-color: #${palette.base03};
     }
 
     horibox {
-        orientation: horizontal;
-        children: [ prompt, entry, listview ];
+       orientation: horizontal;
+       children: [ prompt, entry, listview ];
+    }
+
+    prompt {
+       border-color: #${palette.base0C};
+       border: 0 2px 0 0;
+       horizontal-align: 0;
     }
 
     listview {
@@ -34,11 +44,15 @@ let
     }
 
     element {
-        padding: 0px 3px;
+        spacing: 3px;
+        background-color: #${palette.base00};
+        border-color: #${palette.base00};
     }
 
     element selected {
-        background-color: #${palette.base02};
+        background-color: #${palette.base00};
+        border-color: #${palette.base0C};
+        border: 0 0 2px 0;
     }
   '';
 in
