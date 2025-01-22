@@ -65,6 +65,8 @@ in
 
       keybindings = lib.mkOptionDefault {
         "${mod}+d" = "exec rofi -show drun";
+        "${mod}+Shift+z" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
+
         "${mod}+Return" = "exec alacritty";
         "${mod}+Shift+q" = "kill";
         "${mod}+r" = "mode resize";
@@ -84,7 +86,7 @@ in
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
-        "${mod}+Shift+s" = "exec scrot -z - | xclip -selection clipboard -target image/png";
+        "${mod}+Shift+s" = "exec scrot -s -z - | xclip -selection clipboard -target image/png";
       };
 
       bars = [ ];

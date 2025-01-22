@@ -9,6 +9,7 @@
       # packages which are only started through i3
       extraPackages = with pkgs; [
         rofi
+        rofi-power-menu
         feh
         picom
         dmenu
