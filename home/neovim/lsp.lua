@@ -54,6 +54,10 @@ lspconfig.cssls.setup {
 lspconfig.clangd.setup {
     capabilities = capabilities,
 }
+lspconfig.hls.setup {
+    capabilities = capabilities,
+}
+
 lspconfig.nil_ls.setup {
     capabilities = capabilities,
     settings = {
