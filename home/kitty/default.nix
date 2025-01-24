@@ -6,13 +6,14 @@ in
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 12;
+      name = "JetBrainsMono";
+      size = 14;
     };
 
     settings = {
       window_padding_width = 4;
 
+      enable_audio_bell = false;
       foreground = "#${palette.base05}";
       background = "#${palette.base00}";
       color0 = "#${palette.base00}";
@@ -32,5 +33,5 @@ in
       color14 = "#${palette.base0E}";
       color15 = "#${palette.base0F}";
     };
- };
+  };
 }

@@ -55,7 +55,12 @@
       noto-fonts
       noto-fonts-emoji
       gyre-fonts
-      (nerdfonts.override { fonts = [ "GeistMono" "JetBrainsMono" ]; })
+      (nerdfonts.override {
+        fonts = [
+          "GeistMono"
+          "JetBrainsMono"
+        ];
+      })
     ];
 
     enableDefaultPackages = false;
