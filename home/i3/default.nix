@@ -67,7 +67,7 @@ in
         "${mod}+d" = "exec rofi -show drun";
         "${mod}+Shift+z" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
 
-        "${mod}+Return" = "exec alacritty";
+        "${mod}+Return" = "exec kitty";
         "${mod}+Shift+q" = "kill";
         "${mod}+r" = "mode resize";
 

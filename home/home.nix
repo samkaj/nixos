@@ -9,6 +9,7 @@
     ./gtk
     ./rofi
     ./tmux
+    ./kitty
     nix-colors.homeManagerModules.default
   ];
 

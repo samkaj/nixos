@@ -95,6 +95,7 @@
     firefox
     slack
     alacritty
+    kitty
     bash
     psmisc
     zsh
