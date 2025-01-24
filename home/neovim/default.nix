@@ -44,6 +44,7 @@ in
         p.python
         p.typescript
         p.lua
+        p.haskell
       ]))
     ];
     extraLuaConfig = ''

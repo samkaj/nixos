@@ -12,5 +12,8 @@
     lua
     luaformatter
     lua-language-server
+    ghc
+    haskellPackages.cabal-install
+    haskellPackages.haskell-language-server
   ];
 }
