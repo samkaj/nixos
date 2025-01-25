@@ -6,13 +6,16 @@ in
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrainsMono";
+      name = "JetBrainsMono Nerd Font Mono";
       size = 14;
     };
 
     settings = {
       window_padding_width = 4;
-
+      
+      cursor_shape = "block";
+      cursor_shape_unfocused= "hollow";
+      shell_integration = "no-cursor";
       enable_audio_bell = false;
       foreground = "#${palette.base05}";
       background = "#${palette.base00}";

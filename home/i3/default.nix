@@ -20,7 +20,7 @@ in
       ];
 
       gaps = {
-        inner = 4;
+        inner = 2;
         outer = 1;
         top = 28;
         smartBorders = "on";
@@ -48,9 +48,9 @@ in
       colors = {
         focused = {
           background = "#${palette.base00}";
-          border = "#${palette.base0C}";
-          childBorder = "#${palette.base0C}";
-          indicator = "#${palette.base0C}";
+          border = "#${palette.base05}";
+          childBorder = "#${palette.base05}";
+          indicator = "#${palette.base05}";
           text = "#${palette.base0C}";
         };
 
